@@ -1,0 +1,11 @@
+LUMIVEX is an experimental language model project.
+A language model learns statistical patterns from sequences of tokens.
+Tokens are the basic units processed by a neural language model.
+The model uses context to predict what token should come next.
+Good training data should be diverse, clean, relevant, and legally usable.
+Artificial intelligence systems learn from examples.
+Neural networks contain parameters that are adjusted during training.
+Training minimizes a loss function by updating model parameters.
+Validation data is kept separate from training data.
+Evaluation helps measure whether a model generalizes beyond its training examples.
+LUMIVEX will be developed gradually.

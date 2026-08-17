@@ -1,0 +1,3 @@
+The project will focus on reliable software, efficient training, evaluation, and useful language generation.
+Future versions can use larger datasets and stronger hardware.
+The model should be tested carefully before being used by real users.

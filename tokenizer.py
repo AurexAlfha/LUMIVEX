@@ -1,35 +1,52 @@
 class LumivexTokenizer:
     def __init__(self):
-        self.special_tokens = {
+        self.vocab = {
             "<PAD>": 0,
             "<UNK>": 1,
-            "<BOS>": 2,
-            "<EOS>": 3,
         }
 
+        for i, char in enumerate(
+            "abcdefghijklmnopqrstuvwxyz"
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            "0123456789"
+            " .,!?'-\n",
+            start=2
+        ):
+            if char not in self.vocab:
+                self.vocab[char] = i
+
+        self.inverse_vocab = {
+            token_id: token
+            for token, token_id in self.vocab.items()
+        }
+
+    @property
+    def vocab_size(self):
+        return len(self.vocab)
+
     def encode(self, text):
-        words = text.strip().split()
+        return [
+            self.vocab.get(char, self.vocab["<UNK>"])
+            for char in text
+        ]
 
-        tokens = [self.special_tokens["<BOS>"]]
-
-        for word in words:
-            token_id = sum(ord(char) for char in word) % 96
-            tokens.append(token_id + 4)
-
-        tokens.append(self.special_tokens["<EOS>"])
-        return tokens
-
-    def decode(self, tokens):
-        return " ".join(str(token) for token in tokens)
+    def decode(self, token_ids):
+        return "".join(
+            self.inverse_vocab.get(token_id, "<UNK>")
+            for token_id in token_ids
+        )
 
 
 if __name__ == "__main__":
     tokenizer = LumivexTokenizer()
 
-    text = "Hello LUMIVEX"
-    tokens = tokenizer.encode(text)
+    text = "Hello LUMIVEX!"
 
-    print("LUMIVEX tokenizer loaded successfully.")
+    tokens = tokenizer.encode(text)
+    decoded = tokenizer.decode(tokens)
+
+    print("LUMIVEX tokenizer test successful.")
+    print("Vocabulary size:", tokenizer.vocab_size)
     print("Text:", text)
     print("Tokens:", tokens)
-    print("Decoded:", tokenizer.decode(tokens))
+    print("Decoded:", decoded)

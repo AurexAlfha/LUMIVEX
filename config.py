@@ -1,5 +1,9 @@
+from tokenizer import LumivexTokenizer
+
+_tokenizer = LumivexTokenizer()
+
 LUMIVEX_CONFIG = {
-    "vocab_size": 32000,
+    "vocab_size": _tokenizer.vocab_size,
     "context_length": 128,
     "embedding_size": 256,
     "num_layers": 4,

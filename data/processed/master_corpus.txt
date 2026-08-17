@@ -4,26 +4,13 @@ Assistant: Artificial intelligence is technology that allows computers to perfor
 User: What is a language model?
 Assistant: A language model learns patterns in text and uses those patterns to predict or generate sequences of tokens.
 
+A computer program is a sequence of instructions that tells a computer how to perform a task.
+A neural network learns patterns by adjusting numerical parameters during training.
+A validation set helps measure how well a model performs on data it did not train on.
+
 Language is a system used by people to communicate ideas, information, questions, and experiences.
 Clear writing uses understandable words and logical structure.
 Learning improves when information is organized into meaningful examples.
-
-LUMIVEX is an experimental language model project.
-A language model learns statistical patterns from sequences of tokens.
-Tokens are the basic units processed by a neural language model.
-The model uses context to predict what token should come next.
-Good training data should be diverse, clean, relevant, and legally usable.
-
-Artificial intelligence systems learn from examples.
-Neural networks contain parameters that are adjusted during training.
-Training minimizes a loss function by updating model parameters.
-Validation data is kept separate from training data.
-Evaluation helps measure whether a model generalizes beyond its training examples.
-
-LUMIVEX will be developed gradually.
-The project will focus on reliable software, efficient training, evaluation, and useful language generation.
-Future versions can use larger datasets and stronger hardware.
-The model should be tested carefully before being used by real users.
 
 A reasoning task requires connecting information to reach a conclusion.
 When a problem has multiple steps, each step should be checked before moving to the next.

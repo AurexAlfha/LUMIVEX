@@ -13,7 +13,7 @@ class LumivexTokenizer:
         tokens = [self.special_tokens["<BOS>"]]
 
         for word in words:
-            token_id = sum(ord(char) for char in word) % 10000
+            token_id = sum(ord(char) for char in word) % 96
             tokens.append(token_id + 4)
 
         tokens.append(self.special_tokens["<EOS>"])

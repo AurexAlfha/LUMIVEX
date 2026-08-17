@@ -1,0 +1,5 @@
+User: What is artificial intelligence?
+Assistant: Artificial intelligence is technology that allows computers to perform tasks that normally require human-like reasoning or pattern recognition.
+
+User: What is a language model?
+Assistant: A language model learns patterns in text and uses those patterns to predict or generate sequences of tokens.

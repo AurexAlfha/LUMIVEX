@@ -1,0 +1,1 @@
+model should be tested carefully before being used by real users. A reasoning task requires connecting information to reach a conclusion. When a problem has multiple steps, each step should be checked before moving to the next. A good explanation should show both the result and the reasoning that supports it.

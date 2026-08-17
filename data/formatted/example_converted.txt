@@ -1,0 +1,11 @@
+[CATEGORY: knowledge]
+The water cycle describes the continuous movement of water through evaporation, condensation, precipitation, and collection.
+
+[CATEGORY: science]
+Gravity is an interaction between objects with mass and affects their motion.
+
+[CATEGORY: math]
+If x + 5 = 12, subtracting 5 from both sides gives x = 7.
+
+[CATEGORY: instructions]
+To solve a task clearly, identify the goal, choose a method, perform the steps, and check the result.

@@ -6,7 +6,10 @@ from batcher import LumivexBatcher
 class LumivexTrainingPipeline:
     def __init__(self):
         self.config = LUMIVEX_CONFIG
-        self.data = LumivexDataPipeline()
+
+        self.data = LumivexDataPipeline(
+            "data/processed/master_train.txt"
+        )
 
         self.batcher = LumivexBatcher(
             context_length=self.config["context_length"]

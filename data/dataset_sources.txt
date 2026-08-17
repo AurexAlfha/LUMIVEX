@@ -1,0 +1,18 @@
+LUMIVEX EXTERNAL DATA SOURCES
+
+Candidate:
+FineWeb
+License: ODC-By 1.0
+Upstream: Common Crawl
+Note: Common Crawl Terms of Use also apply.
+Status: NOT IMPORTED
+
+Candidate:
+Open License Corpus (OLC)
+License: Source-specific; verify each selected source.
+Status: NOT IMPORTED
+
+Rule:
+Do not download or train on a large external dataset until
+its license and permitted use have been checked.
+Start with a small sample only.

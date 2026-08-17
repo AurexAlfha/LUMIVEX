@@ -1,0 +1,22 @@
+LUMIVEX DATASET MANIFEST
+
+Every external dataset added to LUMIVEX must have:
+1. Source name
+2. Source URL
+3. License
+4. Allowed usage
+5. Date added
+6. Processing steps
+
+Categories:
+- general
+- knowledge
+- reasoning
+- math
+- science
+- coding
+- conversation
+- creative
+
+Do not add copyrighted material without appropriate permission or license.
+Do not add datasets whose terms prohibit the intended AI training use.

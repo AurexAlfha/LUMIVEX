@@ -1,0 +1,1 @@
+A linear equation can often be solved by isolating the unknown. For example, if x plus 5 equals 12, subtracting 5 from both sides gives x equals 7.

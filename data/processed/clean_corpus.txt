@@ -11,7 +11,11 @@ A validation set helps measure how well a model performs on data it did not trai
 Language is a system used by people to communicate ideas, information, questions, and experiences.
 Clear writing uses understandable words and logical structure.
 Learning improves when information is organized into meaningful examples.
+To solve a problem clearly, first identify the goal, then list the relevant information, choose a method, perform the steps, and finally check the result.
+The water cycle describes how water moves through evaporation, condensation, precipitation, and collection. Solar energy drives much of this cycle.
+A linear equation can often be solved by isolating the unknown. For example, if x plus 5 equals 12, subtracting 5 from both sides gives x equals 7.
 [SOURCE: core | FILE: reasoning.txt]
 A reasoning task requires connecting information to reach a conclusion.
 When a problem has multiple steps, each step should be checked before moving to the next.
 A good explanation should show both the result and the reasoning that supports it.
+Gravity is an interaction that causes objects with mass to attract one another. Near Earth's surface, gravity gives falling objects a downward acceleration.

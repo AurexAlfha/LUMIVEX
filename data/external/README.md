@@ -1,20 +1,18 @@
-# LUMIVEX External Dataset Workspace
+# LUMIVEX External Dataset Registry
 
-External datasets are stored separately from the core corpus.
+Every real external work must be individually reviewed before it enters
+the training corpus.
 
-Flow:
+Required fields:
+- Source
+- Individual work/dataset
+- Copyright/license status
+- Date checked
+- Intended use
+- Processing status
 
-source
-→ downloads
-→ license verification
-→ verified
-→ cleaning
-→ processed
-→ master corpus
+A source being free to download does NOT automatically mean it is free
+for every use.
 
-Rules:
-- Record source and license before training.
-- Keep raw source files unchanged.
-- Never overwrite the original download.
-- Do not use data whose terms prohibit the intended use.
-- Start with small samples before scaling.
+For Project Gutenberg, check the individual ebook's license/copyright
+notice and applicable local law before adding it to LUMIVEX.

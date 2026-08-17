@@ -1,1 +1,1 @@
-reach a conclusion. When a problem has multiple steps, each step should be checked before moving to the next. A good explanation should show both the result and the reasoning that supports it.
+small public-domain sample prepared for LUMIVEX dataset pipeline testing. Books and written knowledge can preserve ideas across generations. A careful reader can compare evidence, identify patterns, and form conclusions. Learning from many examples can help a language model discover useful relationships in text.

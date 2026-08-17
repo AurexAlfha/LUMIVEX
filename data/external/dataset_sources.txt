@@ -1,0 +1,7 @@
+LUMIVEX VERIFIED DATASET CANDIDATE
+
+Source: Project Gutenberg public-domain books
+Use: Small sample for initial corpus pipeline testing
+License/status: Public domain works, subject to applicable jurisdictional rules
+Source documentation: Project Gutenberg / Common Pile Project Gutenberg dataset
+Status: SAMPLE ONLY

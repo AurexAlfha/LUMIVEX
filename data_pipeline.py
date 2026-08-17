@@ -8,7 +8,9 @@ class LumivexDataPipeline:
         self.tokenizer = LumivexTokenizer()
 
     def encode_dataset(self):
-        return self.tokenizer.encode(self.dataset.get_text())
+        return self.tokenizer.encode(
+            self.dataset.get_text()
+        )
 
 
 if __name__ == "__main__":
@@ -16,5 +18,6 @@ if __name__ == "__main__":
 
     tokens = pipeline.encode_dataset()
 
-    print("LUMIVEX data pipeline created.")
+    print("LUMIVEX data pipeline ready.")
+    print("Vocabulary size:", pipeline.tokenizer.vocab_size)
     print("Token count:", len(tokens))

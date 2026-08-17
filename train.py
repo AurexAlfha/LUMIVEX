@@ -1,62 +1,55 @@
 import torch
 import torch.nn as nn
+import torch.optim as optim
 
 from model import LumivexModel
+from training_pipeline import LumivexTrainingPipeline
 
 
-torch.manual_seed(42)
+print("Preparing LUMIVEX training...")
 
-model = LumivexModel(
-    vocab_size=100,
-    context_length=32
-)
+pipeline = LumivexTrainingPipeline()
+inputs, targets = pipeline.prepare()
 
-optimizer = torch.optim.AdamW(
+print("Training data ready.")
+print("Input shape:", inputs.shape)
+print("Target shape:", targets.shape)
+
+model = LumivexModel()
+
+optimizer = optim.AdamW(
     model.parameters(),
     lr=0.001
 )
 
 loss_function = nn.CrossEntropyLoss()
 
-input_ids = torch.tensor([
-    [10, 20, 30, 40, 50, 60, 70, 80],
-    [20, 30, 40, 50, 60, 70, 80, 90],
-    [30, 40, 50, 60, 70, 80, 90, 10],
-], dtype=torch.long)
+model.train()
 
-target_ids = torch.tensor([
-    [20, 30, 40, 50, 60, 70, 80, 90],
-    [30, 40, 50, 60, 70, 80, 90, 10],
-    [40, 50, 60, 70, 80, 90, 10, 20],
-], dtype=torch.long)
+epochs = 3
 
-print("Starting LUMIVEX training...")
-
-for step in range(20):
+for epoch in range(epochs):
     optimizer.zero_grad()
 
-    logits = model(input_ids)
+    output = model(inputs)
 
     loss = loss_function(
-        logits.reshape(-1, 100),
-        target_ids.reshape(-1)
+        output.reshape(-1, output.size(-1)),
+        targets.reshape(-1)
     )
 
     loss.backward()
     optimizer.step()
 
-    if step % 5 == 0:
-        print("Step:", step, "Loss:", round(loss.item(), 4))
+    print(
+        f"Epoch: {epoch + 1}/{epochs} "
+        f"Loss: {loss.item():.4f}"
+    )
 
 torch.save(
-    {
-        "model_state_dict": model.state_dict(),
-        "optimizer_state_dict": optimizer.state_dict(),
-        "step": 20,
-        "loss": loss.item(),
-    },
-    "lumivex_checkpoint.pt"
+    model.state_dict(),
+    "lumivex_v2_checkpoint.pt"
 )
 
-print("Training completed.")
-print("Trained checkpoint saved successfully.")
+print("LUMIVEX training completed.")
+print("New checkpoint saved successfully.")

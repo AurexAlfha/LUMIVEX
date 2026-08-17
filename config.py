@@ -9,5 +9,5 @@ LUMIVEX_CONFIG = {
     "num_layers": 4,
     "num_heads": 4,
     "learning_rate": 0.001,
-    "batch_size": 2,
+    "batch_size": 4,
 }

@@ -1,52 +1,58 @@
 class LumivexTokenizer:
+    """
+    LUMIVEX byte-level tokenizer.
+
+    Each UTF-8 byte maps to one token.
+    Special tokens:
+        0 = PAD
+        1 = UNK
+        2-257 = byte values 0-255
+    """
+
+    PAD_ID = 0
+    UNK_ID = 1
+    BYTE_OFFSET = 2
+    VOCAB_SIZE = 258
+
     def __init__(self):
-        self.vocab = {
-            "<PAD>": 0,
-            "<UNK>": 1,
-        }
-
-        for i, char in enumerate(
-            "abcdefghijklmnopqrstuvwxyz"
-            "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-            "0123456789"
-            " .,!?'-\n",
-            start=2
-        ):
-            if char not in self.vocab:
-                self.vocab[char] = i
-
-        self.inverse_vocab = {
-            token_id: token
-            for token, token_id in self.vocab.items()
-        }
-
-    @property
-    def vocab_size(self):
-        return len(self.vocab)
+        self.vocab_size = self.VOCAB_SIZE
 
     def encode(self, text):
+        data = text.encode("utf-8")
+
         return [
-            self.vocab.get(char, self.vocab["<UNK>"])
-            for char in text
+            byte + self.BYTE_OFFSET
+            for byte in data
         ]
 
     def decode(self, token_ids):
-        return "".join(
-            self.inverse_vocab.get(token_id, "<UNK>")
-            for token_id in token_ids
+        data = bytearray()
+
+        for token_id in token_ids:
+            if self.BYTE_OFFSET <= token_id < self.BYTE_OFFSET + 256:
+                data.append(token_id - self.BYTE_OFFSET)
+
+        return bytes(data).decode(
+            "utf-8",
+            errors="replace"
         )
 
 
 if __name__ == "__main__":
     tokenizer = LumivexTokenizer()
 
-    text = "Hello LUMIVEX!"
+    text = "Hello LUMIVEX! नमस्ते 🚀"
 
     tokens = tokenizer.encode(text)
     decoded = tokenizer.decode(tokens)
 
-    print("LUMIVEX tokenizer test successful.")
+    print("LUMIVEX Tokenizer V2 test successful.")
     print("Vocabulary size:", tokenizer.vocab_size)
-    print("Text:", text)
-    print("Tokens:", tokens)
+    print("Original:", text)
+    print("Token count:", len(tokens))
     print("Decoded:", decoded)
+
+    if decoded == text:
+        print("Encode/decode verification: PASS")
+    else:
+        print("Encode/decode verification: FAILED")

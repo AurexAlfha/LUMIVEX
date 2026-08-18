@@ -32,7 +32,8 @@ while True:
     if not prompt:
         continue
 
-    tokens = tokenizer.encode(prompt)
+    prompt_tokens = tokenizer.encode(prompt)
+    tokens = prompt_tokens.copy()
 
     for _ in range(40):
 
@@ -53,7 +54,7 @@ while True:
 
         tokens.append(next_token)
 
-    response = tokenizer.decode(tokens)
+    response = tokenizer.decode(tokens[len(prompt_tokens):])
 
     print("LUMIVEX:", response)
     print()
